@@ -25,17 +25,17 @@ contract Staking is Ownable {
         uint256 indexed shares
     );
 
-    uint256 public currentStakingId;
+    uint256 private currentStakingId;
 
     // stakingId => UserStaking
-    mapping(uint256 => UserStaking) public userStakingOf;
+    mapping(uint256 => UserStaking) private userStakingOf;
 
-    IERC20 token;
+    IERC20 private token;
 
-    uint256 public pool;
+    uint256 private pool;
 
-    uint public baseApy;
-    uint[6] public bonusApy;
+    uint private baseApy;
+    uint[6] private bonusApy;
 
     struct UserStaking {
         address account;
